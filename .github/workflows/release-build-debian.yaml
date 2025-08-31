@@ -1,4 +1,4 @@
-name: "Release Build Trixie"
+name: "Release Build Debian"
 
 on:
   workflow_dispatch:
@@ -22,10 +22,9 @@ jobs:
       fail-fast: false
       matrix:
         release:
-          - trixie
+          - bookworm
         arch:
-          #- amd64
-          - arm64
+          - amd64
     continue-on-error: false  # true in prod, false for testing
     steps:
       - name: "Set dated version for unstable builds"
